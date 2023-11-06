@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'views/login_screen.dart';
+import 'views/login_onboarding/email_sign_in_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SplashScreen(),
+    return SafeArea(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'MyFont'),
+        home: const SplashScreen(),
+      ),
     );
   }
 }
@@ -41,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const EmailSingInScreen(),
+            builder: (context) => const EmailSignInScreen(),
           ),
         );
       },
@@ -50,17 +54,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF9747FF),
+    return Scaffold(
+      backgroundColor: const Color(0xFF9747FF),
       body: Center(
-        child: Text(
-          'Clot',
-          style: TextStyle(
-              color: Color(0xFFFFFFFF),
-              fontSize: 60,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 8),
-        ), // The logo
+        child: Image.asset('assets/images/Group 16.png'),
       ),
     );
   }
