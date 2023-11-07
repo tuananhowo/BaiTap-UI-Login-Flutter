@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/button_widget.dart';
+import '../../widgets/login_onboarding_widgets/button_widget.dart';
 import 'email_sign_in_screen.dart';
 
 class SentEmailScreen extends StatelessWidget {
@@ -36,10 +36,10 @@ class IconMessageSentEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/images/messagetext2.png'),
+        Image.asset('assets/images/icon_images/messagetext2.png'),
         Positioned(
           left: -9,
-          child: Image.asset('assets/images/messagetext1.png'),
+          child: Image.asset('assets/images/icon_images/messagetext1.png'),
         ),
       ],
     );

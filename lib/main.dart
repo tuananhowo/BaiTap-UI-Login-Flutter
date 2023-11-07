@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'views/login_onboarding/email_sign_in_screen.dart';
+import 'views/login_onboarding_views/email_sign_in_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -57,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF9747FF),
       body: Center(
-        child: Image.asset('assets/images/Group 16.png'),
+        child: Image.asset('assets/images/icon_images/Group 16.png'),
       ),
     );
   }

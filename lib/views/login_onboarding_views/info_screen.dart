@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/button_widget.dart';
-import '../../widgets/dropdown_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/button_widget.dart';
+import '../../widgets/login_onboarding_widgets/dropdown_button_widget.dart';
+import '../home_page_views/home_page_screen.dart';
 
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
@@ -73,7 +74,8 @@ class InfoScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(
                           top: 14, left: 24, right: 24, bottom: 16),
                       color: const Color(0xFFF4F4F4),
-                      child: const ButtonWidget(text: 'Finish'),
+                      child: const ButtonWidget(
+                          text: 'Finish', destination: HomePageScreen()),
                     ),
                   ],
                 ),

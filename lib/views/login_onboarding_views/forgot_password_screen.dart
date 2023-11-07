@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/back_button_widget.dart';
-import '../../widgets/button_widget.dart';
-import '../../widgets/text_input_widget.dart';
+import '../../widgets/login_onboarding_widgets/back_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/button_widget.dart';
+import '../../widgets/login_onboarding_widgets/text_input_widget.dart';
 
 import 'sent_email_screen.dart';
 

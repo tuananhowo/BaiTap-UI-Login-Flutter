@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/back_button_widget.dart';
-import '../../widgets/button_widget.dart';
-import '../../widgets/secondary_button_widget.dart';
-import '../../widgets/text_input_widget.dart';
+import '../../widgets/login_onboarding_widgets/back_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/button_widget.dart';
+import '../../widgets/login_onboarding_widgets/secondary_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/text_input_widget.dart';
+import '../home_page_views/home_page_screen.dart';
 import 'forgot_password_screen.dart';
 
 class PasswordSignInScreen extends StatelessWidget {
@@ -37,6 +38,7 @@ class PasswordSignInScreen extends StatelessWidget {
                 padding: EdgeInsets.only(top: 16, bottom: 16),
                 child: ButtonWidget(
                   text: 'Continue',
+                  destination: HomePageScreen(),
                 ),
               ),
               SecondaryButtonWidget(

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../widgets/text_input_widget.dart';
-import '../../widgets/button_widget.dart';
-import '../../widgets/secondary_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/text_input_widget.dart';
+import '../../widgets/login_onboarding_widgets/button_widget.dart';
+import '../../widgets/login_onboarding_widgets/secondary_button_widget.dart';
 
 import 'create_account_screen.dart';
 import 'password_sign_in_screen.dart';
@@ -48,15 +48,15 @@ class EmailSignInScreen extends StatelessWidget {
               ),
               SizedBox(height: 72),
               SignUpMethodsWidget(
-                  image: 'assets/images/apple_icon.svg',
+                  image: 'assets/images/icon_images/apple_icon.svg',
                   loginProvider: 'Apple'),
               SizedBox(height: 12),
               SignUpMethodsWidget(
-                  image: 'assets/images/google_icon.svg',
+                  image: 'assets/images/icon_images/google_icon.svg',
                   loginProvider: 'Google'),
               SizedBox(height: 12),
               SignUpMethodsWidget(
-                  image: 'assets/images/facebook_icon.svg',
+                  image: 'assets/images/icon_images/facebook_icon.svg',
                   loginProvider: 'Facebook'),
             ],
           ),

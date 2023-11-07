@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/back_button_widget.dart';
-import '../../widgets/button_widget.dart';
-import '../../widgets/secondary_button_widget.dart';
-import '../../widgets/text_input_widget.dart';
+import '../../widgets/login_onboarding_widgets/back_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/button_widget.dart';
+import '../../widgets/login_onboarding_widgets/secondary_button_widget.dart';
+import '../../widgets/login_onboarding_widgets/text_input_widget.dart';
 import 'forgot_password_screen.dart';
 import 'info_screen.dart';
 
