@@ -1,4 +1,6 @@
+import 'package:bai_tap_ui_login/import_assets/icon_management_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BackButtonWidget extends StatelessWidget {
   const BackButtonWidget({super.key});
@@ -16,7 +18,11 @@ class BackButtonWidget extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: const Icon(Icons.arrow_back_ios_rounded),
+          icon: SvgPicture.asset(
+            IconManagementSvg().backIcon,
+            width: 16,
+            height: 16,
+          ),
         ),
       ),
     );

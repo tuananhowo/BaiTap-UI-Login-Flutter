@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/import_assets/icon_management_png.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/login_onboarding_widgets/button_widget.dart';
@@ -36,10 +37,10 @@ class IconMessageSentEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/images/icon_images/messagetext2.png'),
+        Image.asset(IconManagementPng().messagetextIcon2),
         Positioned(
           left: -9,
-          child: Image.asset('assets/images/icon_images/messagetext1.png'),
+          child: Image.asset(IconManagementPng().messagetextIcon1),
         ),
       ],
     );

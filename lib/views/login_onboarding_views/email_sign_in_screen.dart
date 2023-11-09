@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/import_assets/icon_management_svg.dart';
 import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,15 +15,15 @@ class EmailSignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 24, right: 24),
+          padding: const EdgeInsets.only(left: 24, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 70),
-              Align(
+              const SizedBox(height: 70),
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Sign in',
@@ -32,31 +33,30 @@ class EmailSignInScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 32),
-              TextInputWidget(hintText: 'Email Address'),
-              Padding(
+              const SizedBox(height: 32),
+              const TextInputWidget(hintText: 'Email Address'),
+              const Padding(
                 padding: EdgeInsets.only(top: 16, bottom: 16),
                 child: ButtonWidget(
                   text: 'Continue',
                   destination: PasswordSignInScreen(),
                 ),
               ),
-              SecondaryButtonWidget(
+              const SecondaryButtonWidget(
                 text: 'Don\'t have an Account ?',
                 textButton: 'Create One',
                 destination: CreateAccountScreen(),
               ),
-              SizedBox(height: 72),
+              const SizedBox(height: 72),
               SignUpMethodsWidget(
-                  image: 'assets/images/icon_images/apple_icon.svg',
-                  loginProvider: 'Apple'),
-              SizedBox(height: 12),
+                  image: IconManagementSvg().appleIcon, loginProvider: 'Apple'),
+              const SizedBox(height: 12),
               SignUpMethodsWidget(
-                  image: 'assets/images/icon_images/google_icon.svg',
+                  image: IconManagementSvg().googleIcon,
                   loginProvider: 'Google'),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               SignUpMethodsWidget(
-                  image: 'assets/images/icon_images/facebook_icon.svg',
+                  image: IconManagementSvg().facebookIcon,
                   loginProvider: 'Facebook'),
             ],
           ),

@@ -20,7 +20,7 @@ class TabBarWidget extends StatefulWidget {
 }
 
 class _TabBarWidgetState extends State<TabBarWidget> {
-  int selectedTab = 1; // Một biến để lưu trạng thái của tab được chọn
+  int selectedTab = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,6 @@ class _TabBarWidgetState extends State<TabBarWidget> {
     );
   }
 
-  // Hàm xây dựng các tab
   Widget buildTab(int tabIndex, String choice) {
     final isSelected = selectedTab == tabIndex;
     return ElevatedButton(
@@ -65,6 +64,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           choice,
           width: 24,
           height: 24,
+          // ignore: deprecated_member_use
           color: isSelected ? Colors.white : Colors.black.withOpacity(0.5),
         ),
       ),
