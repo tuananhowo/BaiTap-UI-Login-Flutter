@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:bai_tap_ui_login/views/bottom_navigation_bar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -73,7 +74,7 @@ class InfoScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.only(
                           top: 14, left: 24, right: 24, bottom: 16),
-                      color: const Color(0xFFF4F4F4),
+                      color: ColorThemeData.colorGray,
                       child: const ButtonWidget(
                           text: 'Finish',
                           destination: BottomNavigationBarWidget()),
@@ -118,9 +119,12 @@ class _SingleSmallButtonState extends State<SingleSmallButton> {
               }
             },
             style: ElevatedButton.styleFrom(
-                foregroundColor: isMan ? Colors.white : Colors.black,
-                backgroundColor:
-                    isMan ? const Color(0xFF9747FF) : const Color(0xFFF4F4F4),
+                foregroundColor: isMan
+                    ? ColorThemeData.colorWhite
+                    : ColorThemeData.colorBlack,
+                backgroundColor: isMan
+                    ? ColorThemeData.colorPurple
+                    : ColorThemeData.colorGray,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
                     side: BorderSide.none)),
@@ -141,9 +145,12 @@ class _SingleSmallButtonState extends State<SingleSmallButton> {
               }
             },
             style: ElevatedButton.styleFrom(
-                foregroundColor: isMan ? Colors.black : Colors.white,
-                backgroundColor:
-                    isMan ? const Color(0xFFF4F4F4) : const Color(0xFF9747FF),
+                foregroundColor: isMan
+                    ? ColorThemeData.colorBlack
+                    : ColorThemeData.colorWhite,
+                backgroundColor: isMan
+                    ? ColorThemeData.colorGray
+                    : ColorThemeData.colorPurple,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
                     side: BorderSide.none)),

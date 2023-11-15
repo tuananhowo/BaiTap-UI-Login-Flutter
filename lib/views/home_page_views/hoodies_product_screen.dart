@@ -1,11 +1,13 @@
-import 'package:bai_tap_ui_login/import_assets/image_management_png.dart';
+import 'package:bai_tap_ui_login/import_assets/assets.dart';
+import 'package:bai_tap_ui_login/widgets/home_page_widgets/list_avatar_categories_widget.dart';
 import 'package:bai_tap_ui_login/widgets/login_onboarding_widgets/back_button_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/home_page_widgets/product_cart_grid_view_widget.dart';
 
 class HoodiesProductScreen extends StatelessWidget {
-  const HoodiesProductScreen({super.key});
+  final CategoryItem item;
+  const HoodiesProductScreen({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -35,27 +37,27 @@ class HoodiesProductScreen extends StatelessWidget {
                   ProductCartGridViewWidget(
                     items: [
                       ProductItemGridView(
-                          image: ImageManagementPng().productImage7,
+                          image: ImageManagementPng.productImage7,
                           nameProduct: 'Men\'s Fleece Pullover Hoodie',
                           price: 100.00),
                       ProductItemGridView(
-                          image: ImageManagementPng().productImage8,
+                          image: ImageManagementPng.productImage8,
                           nameProduct: 'Fleece Pullover Skate Hoodie',
                           price: 150.97),
                       ProductItemGridView(
-                          image: ImageManagementPng().productImage9,
+                          image: ImageManagementPng.productImage9,
                           nameProduct: 'Fleece Skate Hoodie',
                           price: 110.00),
                       ProductItemGridView(
-                          image: ImageManagementPng().productImage10,
+                          image: ImageManagementPng.productImage10,
                           nameProduct: 'Men\'s Ice-Dye Pullover Hoodie',
                           price: 128.97),
                       ProductItemGridView(
-                          image: ImageManagementPng().productImage11,
+                          image: ImageManagementPng.productImage11,
                           nameProduct: 'Men\'s Harrington Jacket',
                           price: 148.00),
                       ProductItemGridView(
-                          image: ImageManagementPng().productImage12,
+                          image: ImageManagementPng.productImage12,
                           nameProduct: 'Men\'s Harrington Jacket',
                           price: 148.00),
                     ],

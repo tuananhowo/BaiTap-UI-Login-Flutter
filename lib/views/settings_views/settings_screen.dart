@@ -8,6 +8,7 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cài đặt'),
+        automaticallyImplyLeading: false,
       ),
     );
   }

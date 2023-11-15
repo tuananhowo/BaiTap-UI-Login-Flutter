@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 
 class DropdownButtonWidget extends StatefulWidget {
@@ -18,7 +19,7 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: const Color(0xFFF4F4F4)),
+          color: ColorThemeData.colorGray),
       child: DropdownButton<String>(
         value: selectedValue,
         hint: const Padding(

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../views/home_page_views/hoodies_product_screen.dart';
+
 class CategoryItem {
   final String text;
   final String image;
-  final void Function()? onPress;
 
-  CategoryItem({required this.text, required this.image, this.onPress});
+  CategoryItem({required this.text, required this.image});
 }
 
-class ItemAvatarCategoriesWidget extends StatelessWidget {
-  const ItemAvatarCategoriesWidget({required this.items, super.key});
+class ListAvatarCategoriesWidget extends StatelessWidget {
+  const ListAvatarCategoriesWidget({required this.items, super.key});
 
   final List<CategoryItem> items;
 
@@ -26,7 +27,16 @@ class ItemAvatarCategoriesWidget extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           final item = items[index];
           return GestureDetector(
-            onTap: item.onPress,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HoodiesProductScreen(
+                    item: item,
+                  ),
+                ),
+              );
+            },
             child: Column(
               children: [
                 ClipRRect(

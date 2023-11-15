@@ -1,19 +1,35 @@
-import 'package:bai_tap_ui_login/import_assets/icon_management_svg.dart';
-import 'package:bai_tap_ui_login/import_assets/image_management_png.dart';
-import 'package:bai_tap_ui_login/views/home_page_views/hoodies_product_screen.dart';
+import 'package:bai_tap_ui_login/import_assets/assets.dart';
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../widgets/home_page_widgets/dropdown_gender_button_widget.dart';
-import '../../widgets/home_page_widgets/item_avatar_categories_widget.dart';
+import '../../widgets/home_page_widgets/list_avatar_categories_widget.dart';
 import '../../widgets/home_page_widgets/product_cart_list_view_widget.dart';
 import '../../widgets/home_page_widgets/search_input_widget.dart';
 import '../../widgets/home_page_widgets/text_button_categories_widget.dart';
 
 import 'shop_by_categories_screen.dart';
 
-class HomePageScreen extends StatelessWidget {
+class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
+
+  @override
+  State<HomePageScreen> createState() => _HomePageScreenState();
+}
+
+class _HomePageScreenState extends State<HomePageScreen> {
+  List<CategoryItem> items = [
+    CategoryItem(
+      text: 'Hoodies',
+      image: ImageManagementPng.avatarCategory1,
+    ),
+    CategoryItem(text: 'Shorts', image: ImageManagementPng.avatarCategory2),
+    CategoryItem(text: 'Shoes', image: ImageManagementPng.avatarCategory3),
+    CategoryItem(text: 'Bag', image: ImageManagementPng.avatarCategory4),
+    CategoryItem(
+        text: 'Accessories', image: ImageManagementPng.avatarCategory5),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +48,7 @@ class HomePageScreen extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(100),
                 child: Image.asset(
-                  ImageManagementPng().avatarProduct1,
+                  ImageManagementPng.avatarProduct1,
                   width: 40,
                   height: 40,
                 ),
@@ -41,12 +57,12 @@ class HomePageScreen extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: const Color(0xFF9747FF),
+                  color: ColorThemeData.colorPurple,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(12),
                   child: SvgPicture.asset(
-                    IconManagementSvg().bagIcon,
+                    IconManagementSvg.bagIcon,
                     width: 16,
                     height: 16,
                   ),
@@ -79,44 +95,8 @@ class HomePageScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              ItemAvatarCategoriesWidget(
-                items: [
-                  CategoryItem(
-                    text: 'Hoddies',
-                    image: ImageManagementPng().avatarCategory1,
-                    onPress: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HoodiesProductScreen(),
-                      ),
-                    ),
-                  ),
-                  CategoryItem(
-                      text: 'Shorts',
-                      image: ImageManagementPng().avatarCategory2),
-                  CategoryItem(
-                      text: 'Shoes',
-                      image: ImageManagementPng().avatarCategory3),
-                  CategoryItem(
-                      text: 'Bag', image: ImageManagementPng().avatarCategory4),
-                  CategoryItem(
-                      text: 'Accessories',
-                      image: ImageManagementPng().avatarCategory5),
-                  CategoryItem(
-                      text: 'Hoddies',
-                      image: ImageManagementPng().avatarCategory1),
-                  CategoryItem(
-                      text: 'Shorts',
-                      image: ImageManagementPng().avatarCategory2),
-                  CategoryItem(
-                      text: 'Shoes',
-                      image: ImageManagementPng().avatarCategory3),
-                  CategoryItem(
-                      text: 'Bag', image: ImageManagementPng().avatarCategory4),
-                  CategoryItem(
-                      text: 'Accessories',
-                      image: ImageManagementPng().avatarCategory5),
-                ],
+              ListAvatarCategoriesWidget(
+                items: items,
               ),
               const SizedBox(
                 height: 24,
@@ -137,21 +117,7 @@ class HomePageScreen extends StatelessWidget {
                 height: 16,
               ),
               ProductCartListViewWidget(
-                items: [
-                  ProductItem(
-                      image: ImageManagementPng().productImage1,
-                      nameProduct: 'Men\'s Harrington Jacket',
-                      price: 148.00),
-                  ProductItem(
-                      image: ImageManagementPng().productImage2,
-                      nameProduct: 'Max Cirro Men\'s Slides',
-                      price: 55.00,
-                      cost: 110.00),
-                  ProductItem(
-                      image: ImageManagementPng().productImage3,
-                      nameProduct: 'Men\'s Coaches Jacket',
-                      price: 66.97),
-                ],
+                items: topSelling,
               ),
               const SizedBox(
                 height: 24,
@@ -164,7 +130,7 @@ class HomePageScreen extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
-                        color: Color(0xFF9747FF)),
+                        color: ColorThemeData.colorPurple),
                   ),
                   TextButtonCategoriesWidget(text: 'See All')
                 ],
@@ -173,20 +139,7 @@ class HomePageScreen extends StatelessWidget {
                 height: 16,
               ),
               ProductCartListViewWidget(
-                items: [
-                  ProductItem(
-                      image: ImageManagementPng().productImage4,
-                      nameProduct: 'Men\'s Harrington Jacket',
-                      price: 148.00),
-                  ProductItem(
-                      image: ImageManagementPng().productImage5,
-                      nameProduct: 'Max Cirro Men\'s Slides',
-                      price: 55.00),
-                  ProductItem(
-                      image: ImageManagementPng().productImage6,
-                      nameProduct: 'Men\'s Coaches Jacket',
-                      price: 66.97),
-                ],
+                items: newIn,
               ),
             ],
           ),

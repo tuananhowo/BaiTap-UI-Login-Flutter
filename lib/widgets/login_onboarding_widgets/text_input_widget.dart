@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 
 class TextInputWidget extends StatelessWidget {
@@ -14,7 +15,7 @@ class TextInputWidget extends StatelessWidget {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4),
             borderSide: BorderSide.none),
-        fillColor: const Color(0xFFF4F4F4),
+        fillColor: ColorThemeData.colorGray,
       ),
     );
   }

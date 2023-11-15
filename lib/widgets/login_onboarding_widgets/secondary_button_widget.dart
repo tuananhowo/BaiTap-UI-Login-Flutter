@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButtonWidget extends StatelessWidget {
@@ -21,14 +22,15 @@ class SecondaryButtonWidget extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (contex) => destination,
+                  builder: (context) => destination,
                 ),
               );
             },
             child: Text(
               textButton,
               style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.w900),
+                  color: ColorThemeData.colorBlack,
+                  fontWeight: FontWeight.w900),
             ))
       ],
     );

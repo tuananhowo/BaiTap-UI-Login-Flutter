@@ -1,7 +1,8 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../import_assets/icon_management_svg.dart';
+import '../../import_assets/assets.dart';
 
 class ProductItemGridView {
   final String image;
@@ -30,14 +31,14 @@ class ProductCartGridViewWidget extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
-          childAspectRatio: 161 / 272),
+          childAspectRatio: 140 / 272),
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
         final item = items[index];
 
         return Container(
           decoration: BoxDecoration(
-            color: const Color(0xFFF4F4F4),
+            color: ColorThemeData.colorGray,
             borderRadius: BorderRadius.circular(8),
           ),
           clipBehavior: Clip.antiAlias,
@@ -60,7 +61,7 @@ class ProductCartGridViewWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(4),
                       child: SvgPicture.asset(
-                        IconManagementSvg().heartAddIcon,
+                        IconManagementSvg.heartAddIcon,
                         width: 16,
                         height: 16,
                       ),

@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 
 class ShopByCategoriesItem {
@@ -28,7 +29,7 @@ class ItemShopByCategoriesListViewWidget extends StatelessWidget {
               onTap: item.onPress,
               child: Container(
                 decoration: BoxDecoration(
-                    color: const Color(0xFFF4F4F4),
+                    color: ColorThemeData.colorGray,
                     borderRadius: BorderRadius.circular(8)),
                 child: Padding(
                   padding: const EdgeInsets.all(12),

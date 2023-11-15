@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 
 class TextButtonCategoriesWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class TextButtonCategoriesWidget extends StatelessWidget {
       },
       child: Text(
         text,
-        style: const TextStyle(fontSize: 16, color: Colors.black),
+        style: const TextStyle(fontSize: 16, color: ColorThemeData.colorBlack),
       ),
     );
   }

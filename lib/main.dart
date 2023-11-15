@@ -1,6 +1,6 @@
-import 'package:bai_tap_ui_login/import_assets/icon_management_png.dart';
 import 'package:flutter/material.dart';
 
+import 'import_assets/assets.dart';
 import 'views/login_onboarding_views/email_sign_in_screen.dart';
 
 void main() async {
@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF9747FF),
       body: Center(
-        child: Image.asset(IconManagementPng().logoClot),
+        child: Image.asset(IconManagementPng.logoClot),
       ),
     );
   }

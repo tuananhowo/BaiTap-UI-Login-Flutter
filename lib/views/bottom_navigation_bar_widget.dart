@@ -1,12 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:bai_tap_ui_login/import_assets/icon_management_svg.dart';
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:bai_tap_ui_login/views/home_page_views/home_page_screen.dart';
 import 'package:bai_tap_ui_login/views/notifications_views/notifications_screen.dart';
 import 'package:bai_tap_ui_login/views/orders_views/orders_screen.dart';
 import 'package:bai_tap_ui_login/views/settings_views/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../import_assets/assets.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   const BottomNavigationBarWidget({super.key});
@@ -28,9 +30,9 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             currentPageIndex = index;
           });
         },
-        backgroundColor: Colors.white,
+        backgroundColor: ColorThemeData.colorWhite,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-        indicatorColor: const Color.fromARGB(255, 255, 255, 255),
+        indicatorColor: ColorThemeData.colorWhite,
         elevation: 0,
         height: 80,
         selectedIndex: currentPageIndex,
@@ -41,18 +43,18 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               width: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: const Color(0xFF9747FF)),
+                  color: ColorThemeData.colorPurple),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SvgPicture.asset(
-                  IconManagementSvg().homeIcon,
+                  IconManagementSvg.homeIcon,
                   width: 24,
                   height: 24,
                 ),
               ),
             ),
-            icon: SvgPicture.asset(IconManagementSvg().homeIcon,
-                color: Colors.black.withOpacity(0.5)),
+            icon: SvgPicture.asset(IconManagementSvg.homeIcon,
+                color: ColorThemeData.colorBlack.withOpacity(0.5)),
             label: 'Home',
           ),
           NavigationDestination(
@@ -61,18 +63,18 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               width: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: const Color(0xFF9747FF)),
+                  color: ColorThemeData.colorPurple),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SvgPicture.asset(
-                  IconManagementSvg().notificationbingIcon,
+                  IconManagementSvg.notificationbingIcon,
                   width: 24,
                   height: 24,
                 ),
               ),
             ),
-            icon: SvgPicture.asset(IconManagementSvg().notificationbingIcon,
-                color: Colors.black.withOpacity(0.5)),
+            icon: SvgPicture.asset(IconManagementSvg.notificationbingIcon,
+                color: ColorThemeData.colorBlack.withOpacity(0.5)),
             label: 'Notification',
           ),
           NavigationDestination(
@@ -81,18 +83,18 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               width: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: const Color(0xFF9747FF)),
+                  color: ColorThemeData.colorPurple),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SvgPicture.asset(
-                  IconManagementSvg().receiptIcon,
+                  IconManagementSvg.receiptIcon,
                   width: 24,
                   height: 24,
                 ),
               ),
             ),
-            icon: SvgPicture.asset(IconManagementSvg().receiptIcon,
-                color: Colors.black.withOpacity(0.5)),
+            icon: SvgPicture.asset(IconManagementSvg.receiptIcon,
+                color: ColorThemeData.colorBlack.withOpacity(0.5)),
             label: 'Order',
           ),
           NavigationDestination(
@@ -101,18 +103,18 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               width: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: const Color(0xFF9747FF)),
+                  color: ColorThemeData.colorPurple),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SvgPicture.asset(
-                  IconManagementSvg().profileIcon,
+                  IconManagementSvg.profileIcon,
                   width: 24,
                   height: 24,
                 ),
               ),
             ),
-            icon: SvgPicture.asset(IconManagementSvg().profileIcon,
-                color: Colors.black.withOpacity(0.5)),
+            icon: SvgPicture.asset(IconManagementSvg.profileIcon,
+                color: ColorThemeData.colorBlack.withOpacity(0.5)),
             label: 'Setting',
           ),
         ],

@@ -1,3 +1,4 @@
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class ButtonWidget extends StatelessWidget {
         }
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF9747FF),
+        backgroundColor: ColorThemeData.colorPurple,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100), side: BorderSide.none),
       ),

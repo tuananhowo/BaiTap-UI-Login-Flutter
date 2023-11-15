@@ -1,6 +1,8 @@
-import 'package:bai_tap_ui_login/import_assets/icon_management_svg.dart';
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../import_assets/assets.dart';
 
 class DropdownGenderButtonWidget extends StatefulWidget {
   const DropdownGenderButtonWidget({super.key});
@@ -24,14 +26,14 @@ class _DropdownGenderButtonWidgetState
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: const Color(0xFFF4F4F4),
+            color: ColorThemeData.colorGray,
           ),
           child: Row(
             children: [
               Text(selectedValue),
               const SizedBox(width: 4),
               SvgPicture.asset(
-                IconManagementSvg().arrowDownIcon,
+                IconManagementSvg.arrowDownIcon,
                 width: 16,
                 height: 16,
               )

@@ -20,7 +20,7 @@ class CreateAccountScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: 10),
-              BackButtonWidget(),
+              Align(alignment: Alignment.centerLeft, child: BackButtonWidget()),
               SizedBox(height: 20),
               Align(
                 alignment: Alignment.centerLeft,

@@ -1,9 +1,7 @@
-import 'package:bai_tap_ui_login/import_assets/image_management_png.dart';
+import 'package:bai_tap_ui_login/import_assets/assets.dart';
 import 'package:bai_tap_ui_login/widgets/home_page_widgets/item_shop_by_categories_list_view_widget.dart';
 import 'package:bai_tap_ui_login/widgets/login_onboarding_widgets/back_button_widget.dart';
 import 'package:flutter/material.dart';
-
-import 'hoodies_product_screen.dart';
 
 class ShopByCategoriesScreen extends StatelessWidget {
   const ShopByCategoriesScreen({super.key});
@@ -35,29 +33,23 @@ class ShopByCategoriesScreen extends StatelessWidget {
                   ItemShopByCategoriesListViewWidget(
                     items: [
                       ShopByCategoriesItem(
-                        image: ImageManagementPng().avatarCategory1,
+                        image: ImageManagementPng.avatarCategory1,
                         text: 'Hoodies',
-                        onPress: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HoodiesProductScreen(),
-                          ),
-                        ),
                       ),
                       ShopByCategoriesItem(
-                        image: ImageManagementPng().avatarCategory5,
+                        image: ImageManagementPng.avatarCategory5,
                         text: 'Accessories',
                       ),
                       ShopByCategoriesItem(
-                        image: ImageManagementPng().avatarCategory2,
+                        image: ImageManagementPng.avatarCategory2,
                         text: 'Shorts',
                       ),
                       ShopByCategoriesItem(
-                        image: ImageManagementPng().avatarCategory3,
+                        image: ImageManagementPng.avatarCategory3,
                         text: 'Shoes',
                       ),
                       ShopByCategoriesItem(
-                        image: ImageManagementPng().avatarCategory4,
+                        image: ImageManagementPng.avatarCategory4,
                         text: 'Bag',
                       ),
                     ],

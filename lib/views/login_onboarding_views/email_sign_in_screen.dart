@@ -1,8 +1,9 @@
-import 'package:bai_tap_ui_login/import_assets/icon_management_svg.dart';
+import 'package:bai_tap_ui_login/theme/color.dart';
 import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../import_assets/assets.dart';
 import '../../widgets/login_onboarding_widgets/text_input_widget.dart';
 import '../../widgets/login_onboarding_widgets/button_widget.dart';
 import '../../widgets/login_onboarding_widgets/secondary_button_widget.dart';
@@ -15,15 +16,15 @@ class EmailSignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24),
+          padding: EdgeInsets.only(left: 24, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 70),
-              const Align(
+              SizedBox(height: 70),
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Sign in',
@@ -33,30 +34,29 @@ class EmailSignInScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 32),
-              const TextInputWidget(hintText: 'Email Address'),
-              const Padding(
+              SizedBox(height: 32),
+              TextInputWidget(hintText: 'Email Address'),
+              Padding(
                 padding: EdgeInsets.only(top: 16, bottom: 16),
                 child: ButtonWidget(
                   text: 'Continue',
                   destination: PasswordSignInScreen(),
                 ),
               ),
-              const SecondaryButtonWidget(
+              SecondaryButtonWidget(
                 text: 'Don\'t have an Account ?',
                 textButton: 'Create One',
                 destination: CreateAccountScreen(),
               ),
-              const SizedBox(height: 72),
+              SizedBox(height: 72),
               SignUpMethodsWidget(
-                  image: IconManagementSvg().appleIcon, loginProvider: 'Apple'),
-              const SizedBox(height: 12),
+                  image: IconManagementSvg.appleIcon, loginProvider: 'Apple'),
+              SizedBox(height: 12),
               SignUpMethodsWidget(
-                  image: IconManagementSvg().googleIcon,
-                  loginProvider: 'Google'),
-              const SizedBox(height: 12),
+                  image: IconManagementSvg.googleIcon, loginProvider: 'Google'),
+              SizedBox(height: 12),
               SignUpMethodsWidget(
-                  image: IconManagementSvg().facebookIcon,
+                  image: IconManagementSvg.facebookIcon,
                   loginProvider: 'Facebook'),
             ],
           ),
@@ -79,7 +79,7 @@ class SignUpMethodsWidget extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
           elevation: 0,
-          backgroundColor: const Color(0xFFF4F4F4),
+          backgroundColor: ColorThemeData.colorGray,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100), side: BorderSide.none)),
       child: Row(
@@ -102,7 +102,7 @@ class SignUpMethodsWidget extends StatelessWidget {
               padding: const EdgeInsets.only(top: 16, bottom: 16),
               child: Text(
                 'Continue With $loginProvider',
-                style: const TextStyle(color: Colors.black),
+                style: const TextStyle(color: ColorThemeData.colorBlack),
                 textAlign: TextAlign.center,
               ),
             ),
