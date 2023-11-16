@@ -7,6 +7,7 @@ import 'package:bai_tap_ui_login/widgets/product_page_widgets/list_view_image_il
 import 'package:flutter/material.dart';
 
 import '../../widgets/product_page_widgets/choose_color_with_bottom_sheet_widget.dart';
+import '../../widgets/product_page_widgets/choose_quantity_product_widget.dart';
 import '../../widgets/product_page_widgets/choose_size_with_bottom_sheet_widget.dart';
 import '../../widgets/product_page_widgets/user_reviews_widget.dart';
 
@@ -25,6 +26,7 @@ class ProductPageScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  //list image product , name and price
                   const SizedBox(
                     height: 74,
                   ),
@@ -48,14 +50,22 @@ class ProductPageScreen extends StatelessWidget {
                   const SizedBox(
                     height: 34,
                   ),
+
+                  // choose properties
                   const ChooseSizeWithBottomSheetWidget(),
                   const SizedBox(
                     height: 12,
                   ),
                   const ChooseColorWithBottomSheetWidget(),
                   const SizedBox(
+                    height: 12,
+                  ),
+                  const ChooseQuantityProductWidget(),
+                  const SizedBox(
                     height: 26,
                   ),
+
+                  // info product
                   Text(
                       'Built for life and made to last, this full-zip corduroy jacket is part of our Nike Life collection. The spacious fit gives you plenty of room to layer underneath, while the soft corduroy keeps it casual and timeless.',
                       style: TextStyleThemeData.fontSize12WithOpacity05),
@@ -72,6 +82,8 @@ class ProductPageScreen extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
+
+                  // user reviews
                   const Text(
                     'Reviews',
                     style: TextStyleThemeData.fontSize16FontWeight700,

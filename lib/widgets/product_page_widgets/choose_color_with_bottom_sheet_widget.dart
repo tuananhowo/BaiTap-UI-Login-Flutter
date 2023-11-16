@@ -24,11 +24,13 @@ class _ChooseColorWithBottomSheetWidgetState
     return Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            elevation: 0,
-            backgroundColor: ColorThemeData.colorGray,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100)),
-            padding: const EdgeInsets.all(16)),
+          elevation: 0,
+          backgroundColor: ColorThemeData.colorGray,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          padding:
+              const EdgeInsets.only(top: 16, left: 18, bottom: 16, right: 22),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -162,7 +164,7 @@ class _ListViewChoiceState extends State<ListViewChoice> {
                     borderRadius: BorderRadius.circular(100),
                     color: ColorThemeData.colorGray),
                 padding: const EdgeInsets.only(
-                    top: 18, bottom: 18, left: 30, right: 20),
+                    top: 16, bottom: 16, left: 30, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

@@ -76,6 +76,11 @@ class IconManagementSvg {
   static const String heartAddIcon =
       'assets/images/icon_images/heart_add_icon.svg';
 
+  static const String minusQuantityIcon =
+      'assets/images/icon_images/minus_quantity_icon.svg';
+  static const String addQuantityIcon =
+      'assets/images/icon_images/add_quantity_icon.svg';
+
   static const String homeIcon = 'assets/images/icon_images/home_icon.svg';
   static const String notificationbingIcon =
       'assets/images/icon_images/notificationbing_icon.svg';
