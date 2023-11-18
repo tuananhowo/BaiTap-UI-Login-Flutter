@@ -4,10 +4,14 @@ import 'package:bai_tap_ui_login/theme/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ValueSelected {
-  static String selectedSize = 'S';
-  static Color selectedColor = Colors.grey;
-}
+List<Color> listItemColor = [
+  Colors.yellow,
+  Colors.red,
+  Colors.blue,
+  Colors.green,
+];
+
+enum ListNameColor { yellow, red, blue, green }
 
 class ChooseColorWithBottomSheetWidget extends StatefulWidget {
   const ChooseColorWithBottomSheetWidget({super.key});
@@ -19,6 +23,7 @@ class ChooseColorWithBottomSheetWidget extends StatefulWidget {
 
 class _ChooseColorWithBottomSheetWidgetState
     extends State<ChooseColorWithBottomSheetWidget> {
+  Color itemColor = listItemColor.first;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -46,7 +51,7 @@ class _ChooseColorWithBottomSheetWidgetState
                   height: 16,
                   // color: item.color
                   decoration: BoxDecoration(
-                    color: ValueSelected.selectedColor,
+                    color: itemColor,
                     borderRadius: BorderRadius.circular(100),
                   ),
                 ),
@@ -67,7 +72,7 @@ class _ChooseColorWithBottomSheetWidgetState
               .showBottomSheet<void>(
                 (BuildContext context) {
                   return Container(
-                    height: 377,
+                    height: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       color: ColorThemeData.colorWhite,
@@ -109,7 +114,12 @@ class _ChooseColorWithBottomSheetWidgetState
                             height: 30,
                           ),
                           ListViewChoice(
-                            items: colorChoose,
+                            colorSelected: itemColor,
+                            onDone: (dynamic item) {
+                              setState(() {
+                                itemColor = item;
+                              });
+                            },
                           )
                         ],
                       ),
@@ -128,36 +138,47 @@ class _ChooseColorWithBottomSheetWidgetState
   }
 }
 
-class ItemListViewProperties {
-  final String nameProperties;
-  final Color? color;
+// class ItemListViewProperties {
+//   final String nameProperties;
+//   final Color? color;
 
-  ItemListViewProperties({required this.nameProperties, this.color});
-}
+//   ItemListViewProperties({required this.nameProperties, this.color});
+// }
 
 class ListViewChoice extends StatefulWidget {
-  final List<ItemListViewProperties> items;
-  const ListViewChoice({super.key, required this.items});
+  // final List<ItemListViewProperties> items;
+  final Color colorSelected;
+  final Function(Color listItemColor)? onDone;
+  const ListViewChoice({super.key, required this.colorSelected, this.onDone});
 
   @override
   State<ListViewChoice> createState() => _ListViewChoiceState();
 }
 
 class _ListViewChoiceState extends State<ListViewChoice> {
-  bool selectedActive = false;
+  late Color colorSelect;
+
+  @override
+  void initState() {
+    colorSelect = widget.colorSelected;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: MediaQuery.of(context).size.height - 100,
       child: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
-            final item = widget.items[index];
+            final item = listItemColor[index];
+            final nameColor = ListNameColor.values[index];
             return GestureDetector(
               onTap: () {
-                ValueSelected.selectedColor = item.color!;
-                selectedActive = true;
+                setState(() {
+                  colorSelect = item;
+                });
                 Navigator.pop(context);
+                widget.onDone?.call(item);
               },
               child: Container(
                 decoration: BoxDecoration(
@@ -169,7 +190,7 @@ class _ListViewChoiceState extends State<ListViewChoice> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      item.nameProperties,
+                      nameColor.name,
                     ),
                     Row(
                       children: [
@@ -178,20 +199,25 @@ class _ListViewChoiceState extends State<ListViewChoice> {
                           height: 16,
                           // color: item.color
                           decoration: BoxDecoration(
-                            color: item.color,
+                            color: item,
                             borderRadius: BorderRadius.circular(100),
                           ),
                         ),
                         const SizedBox(
                           width: 25,
                         ),
-                        SvgPicture.asset(
-                          IconManagementSvg.checkIcon,
-                          width: 24,
-                          height: 24,
-                          // ignore: deprecated_member_use
-                          color: ColorThemeData.colorGray,
-                        )
+                        if (item != colorSelect)
+                          const SizedBox(
+                            width: 24,
+                          ),
+                        if (item == colorSelect)
+                          SvgPicture.asset(
+                            IconManagementSvg.checkIcon,
+                            width: 24,
+                            height: 24,
+                            // ignore: deprecated_member_use
+                            color: ColorThemeData.colorPurple,
+                          )
                       ],
                     ),
                   ],
@@ -202,15 +228,15 @@ class _ListViewChoiceState extends State<ListViewChoice> {
           separatorBuilder: (context, index) => const SizedBox(
                 height: 16,
               ),
-          itemCount: widget.items.length),
+          itemCount: listItemColor.length),
     );
   }
 }
 
-List<ItemListViewProperties> colorChoose = [
-  ItemListViewProperties(nameProperties: 'Orange', color: Colors.orange),
-  ItemListViewProperties(nameProperties: 'Black', color: Colors.black),
-  ItemListViewProperties(nameProperties: 'Red', color: Colors.red),
-  ItemListViewProperties(nameProperties: 'Yellow', color: Colors.yellow),
-  ItemListViewProperties(nameProperties: 'Blue', color: Colors.blue),
-];
+// List<ItemListViewProperties> colorChoose = [
+//   ItemListViewProperties(nameProperties: 'Orange', color: Colors.orange),
+//   ItemListViewProperties(nameProperties: 'Black', color: Colors.black),
+//   ItemListViewProperties(nameProperties: 'Red', color: Colors.red),
+//   ItemListViewProperties(nameProperties: 'Yellow', color: Colors.yellow),
+//   ItemListViewProperties(nameProperties: 'Blue', color: Colors.blue),
+// ];

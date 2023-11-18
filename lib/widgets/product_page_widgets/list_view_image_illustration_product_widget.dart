@@ -20,12 +20,15 @@ class ListViewImageIllustrationProductWidget extends StatelessWidget {
       height: 250,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: items.length,
+        itemCount: items.length + 1,
         separatorBuilder: (context, index) => const SizedBox(
           width: 14,
         ),
         itemBuilder: (BuildContext context, int index) {
-          final item = items[index];
+          if (index == 0) {
+            return const SizedBox(width: 12);
+          }
+          final item = items[index - 1];
           return SizedBox(
             width: 161,
             height: 248,
